@@ -1,6 +1,10 @@
 # tglibrary
 
 **tglibrary** 是一个使用Flask编写的基于 Telegram Bot API 的媒体文件存储解决方案，让您能够轻松上传、管理和分享图片和视频文件，并突破 Telegram 的 20MB 文件大小限制。
+# 主页截图：
+![主页截图](https://tglibrary.ahayu.workers.dev/d/AgACAgQAAxkDAAPzZ95iMOM8E_XuZLoXaoyiWqX6-OUAAuLHMRtp6_FSadMWPO1QG6sBAAMCAAN3AAM2BA)
+# 后台截图：
+![后台截图](https://tglibrary.ahayu.workers.dev/d/AgACAgQAAxkDAAPyZ95iIjIj0QF9vQABA6fnQ1Y0a5S2AALhxzEbaevxUtBoDy3ruPgJAQADAgADdwADNgQ)
 
 打包的Python为3.11版本，可能导致部分较老Linux无法运行，请自行百度或使用AI工具查询相关解决方法！！！
 
@@ -20,10 +24,9 @@
 
 tglibrary 利用 Telegram Bot API 作为后端存储系统，通过以下方式实现功能：
 
-1. **文件分片上传** - 对于超过 20MB 的大文件，tglibrary 会自动将其分割成多个小块进行上传，然后在存储和检索时进行重组
+1. **文件分片上传** - 对于超过 20MB 的视频文件，tglibrary 会自动将其分割成多个TS进行上传，播放时调用m3u8进行播放
 2. **元数据管理** - 为每个文件维护详细的元数据记录，便于快速检索
 3. **直接链接生成** - 为所有上传的媒体文件生成直接可访问的链接
-4. **自动同步** - 在本地和 Telegram 之间保持文件同步
 
 ## 安装
 
@@ -129,7 +132,7 @@ sudo journalctl -u tglibrary -f
 ## 支持与反馈
 如果您觉得本项目对您有帮助，欢迎：
 
-⭐ 给项目点个 Star
-🔄 分享给更多的朋友
-🐛 提交 Issue 或 Pull Request
+* ⭐ 给项目点个 Star
+* 🔄 分享给更多的朋友
+* 🐛 提交 Issue 或 Pull Request
 您的支持是项目持续发展的动力！
