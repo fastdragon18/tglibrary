@@ -2,9 +2,9 @@
 
 **tglibrary** 是一个使用Flask编写的基于 Telegram Bot API 的媒体文件存储解决方案，让您能够轻松上传、管理和分享图片和视频文件，并突破 Telegram 的 20MB 文件大小限制。
 # 主页截图：
-![主页截图](https://tglibrary.ahayu.workers.dev/d/AgACAgQAAxkDAAPzZ95iMOM8E_XuZLoXaoyiWqX6-OUAAuLHMRtp6_FSadMWPO1QG6sBAAMCAAN3AAM2BA)
+![主页截图](https://img.888888.fit/d/AgACAgUAAxkDAAMCZ96TkTSBUMoJAvENglfCT3pxg9QAAsnBMRuvEPlWYiEAAaQw3YhoAQADAgADdwADNgQ)
 # 后台截图：
-![后台截图](https://tglibrary.ahayu.workers.dev/d/AgACAgQAAxkDAAPyZ95iIjIj0QF9vQABA6fnQ1Y0a5S2AALhxzEbaevxUtBoDy3ruPgJAQADAgADdwADNgQ)
+![后台截图](https://img.888888.fit/d/AgACAgUAAxkDAAMDZ96Tq54oaHlpwgS8nTw51rqud3MAAsrBMRuvEPlWBuSIQ2cdUusBAAMCAAN3AAM2BA)
 
 打包的Python为3.11版本，可能导致部分较老Linux无法运行，请自行百度或使用AI工具查询相关解决方法！！！
 
