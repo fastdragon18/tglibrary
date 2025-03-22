@@ -134,5 +134,5 @@ sudo journalctl -u tglibrary -f
 
 * ⭐ 给项目点个 Star
 * 🔄 分享给更多的朋友
-* 🐛 提交 Issue 或 Pull Request
-您的支持是项目持续发展的动力！
+* 🐛 提交 Issue
+* 您的支持是项目持续发展的动力！
