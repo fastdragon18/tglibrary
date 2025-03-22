@@ -129,6 +129,26 @@ sudo journalctl -u tglibrary -f
 - 首次运行自动创建`config.json` 请根据你获取的 `API Token` 和 `CHAT_ID` 正确配置 `config.json`
 - 系统服务运行时将使用配置文件中指定的存储路径
 
+## 反代设置
+Nginx
+```bash
+server {
+    listen 80;
+    server_name your-domain.com;
+    
+    # 设置最大上传文件大小为100MB
+    client_max_body_size 100M;
+    
+    location / {
+        proxy_pass http://localhost:5000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
 ## 支持与反馈
 如果您觉得本项目对您有帮助，欢迎：
 
