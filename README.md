@@ -56,7 +56,7 @@ tglibrary 利用 Telegram Bot API 作为后端存储系统，通过以下方式�
 
 ### Docker部署(推荐)
 ```bash
-docker push sulong/tglibrary:0.0.1
+docker pull sulong/tglibrary
 docker run -d -p 5000:5000 --name tglibrary sulong/tglibrary
 ```
 程序运行自动创建config.json 也可以自行复制config.json，修改完成后合并docker运行一起运行
