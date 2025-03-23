@@ -6,7 +6,7 @@
 # 后台截图：
 ![后台截图](https://img.888888.fit/d/AgACAgUAAxkDAAMDZ96Tq54oaHlpwgS8nTw51rqud3MAAsrBMRuvEPlWBuSIQ2cdUusBAAMCAAN3AAM2BA)
 
-打包的Python为3.11版本，可能导致部分较老Linux无法运行，请自行百度或使用AI工具查询相关解决方法！！！
+## 当前所有版本包括打包版均不保证稳定性,建议使用docker版本,如有问题及时提交lssuse,我会及时修复！！！
 
 前端部分借鉴[SkyDependence](https://github.com/SkyDependence/)大佬的前端，大佬的[tgDrive](https://github.com/SkyDependence/tgDrive)也是不错的项目，大家可以自行前往查看
 
@@ -54,6 +54,16 @@ tglibrary 利用 Telegram Bot API 作为后端存储系统，通过以下方式�
 默认密码为：admin
 ## 使用方法
 
+### Docker部署(推荐)
+```bash
+docker push sulong/tglibrary:0.0.1
+docker run -d -p 5000:5000 --name tglibrary sulong/tglibrary:0.0.1
+```
+程序运行自动创建config.json 也可以自行复制config.json，修改完成后合并docker运行一起运行
+```bash
+docker run -d -p 5000:5000 --name tglibrary -v $(pwd)/config.json:/app/config.json sulong/tglibrary:0.0.1
+```
+Docker部署不是很熟悉，如果你遇到问题有相关的解决方案，欢迎及时lssuse，谢谢！
 ### 命令行使用
 
 ```bash
