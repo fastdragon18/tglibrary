@@ -2,9 +2,11 @@
 
 **tglibrary** 是一个使用Flask编写的基于 Telegram Bot API 的媒体文件存储解决方案，让您能够轻松上传、管理和分享图片和视频文件，并突破 Telegram 的 20MB 文件大小限制。
 # 主页截图：
-![主页截图](https://img.888888.fit/d/AgACAgUAAxkDAAMCZ96TkTSBUMoJAvENglfCT3pxg9QAAsnBMRuvEPlWYiEAAaQw3YhoAQADAgADdwADNgQ)
+![微信截图_20250322150845](https://github.com/user-attachments/assets/d527beb5-bfee-48b4-8b4b-8dcf033658b1)
+
 # 后台截图：
-![后台截图](https://img.888888.fit/d/AgACAgUAAxkDAAMDZ96Tq54oaHlpwgS8nTw51rqud3MAAsrBMRuvEPlWBuSIQ2cdUusBAAMCAAN3AAM2BA)
+![微信截图_20250322150845](https://github.com/user-attachments/assets/35e03c16-16dd-4675-9012-38926cbe4732)
+
 
 ## 当前所有版本包括打包版均不保证稳定性,建议使用docker版本,如有问题及时提交lssuse,我会及时修复！！！
 
@@ -19,6 +21,7 @@
 * 📂 文件管理功能
 * 🔒 安全的私人存储空间
 * 💻 简单易用的命令接口
+* 🔺 自由开关和设置水印
 
 ## 工作原理
 
@@ -39,34 +42,23 @@ tglibrary 利用 Telegram Bot API 作为后端存储系统，通过以下方式�
 1. 在 Telegram 中与 @BotFather 聊天创建新的 Bot
 2. 获取 API Token
 3. 在 Telegram 中与 @get_myidbot 聊天获取你的 CHAT_ID
-4. 程序自动创建配置文件 `config.json`，请自行更改：
-
-```json
-{
-    "TOKEN": "telegram_bot_token",
-    "CHAT_ID": "chat_id",
-    "PASSWORD": "admin",
-    "PORT": 5000,
-    "MAX_VIDEO_SIZE_MB": 20,
-    "SEGMENT_SIZE_MB": 10
-}
-```
+4. 程序自动创建默认配置，请进入管理后台自行更改相关配置
+   
 默认密码为：admin
 ## 使用方法
 
 ### Docker部署(推荐)
 ```bash
-docker pull sulong/tglibrary
-docker run -d -p 5000:5000 --name tglibrary sulong/tglibrary
-```
-程序运行自动创建config.json 也可以自行复制config.json，修改完成后合并docker运行一起运行
-```bash
-docker run -d -p 5000:5000 --name tglibrary -v $(pwd)/config.json:/app/config.json sulong/tglibrary
+docker pull sulong/tglibrary:latest
+docker run -d -p 5000:5000 --name tglibrary sulong/tglibrary:latest
 ```
 Docker部署不是很熟悉，如果你遇到问题有相关的解决方案，欢迎及时lssuse，谢谢！
 ### 命令行使用
+由于本次打包未包含jpeg-dev和ffmpeg依赖，请自行安装或使用Dokcer版本！！
 
 ```bash
+# 安装依赖
+apt install libjpeg-turbo-dev ffmpeg
 # 运行tglibrary
 ./tglibrary
 ```
@@ -136,7 +128,7 @@ sudo journalctl -u tglibrary -f
 ## 注意事项
 
 - 确保 tglibrary 具有执行权限：`chmod +x /path/to/tglibrary`
-- 首次运行自动创建`config.json` 请根据你获取的 `API Token` 和 `CHAT_ID` 正确配置 `config.json`
+- 首次运行请根据你获取的 `API Token` 和 `CHAT_ID` 进入后台自行配置相关信息
 - 系统服务运行时将使用配置文件中指定的存储路径
 
 ## 反代设置
